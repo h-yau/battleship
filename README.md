@@ -1,5 +1,7 @@
 # Battleship Game
 
+Live repo: [here](https://h-yau.github.io/battleship/)
+
 This project is a web-based implementation of the classic Battleship game, developed using JavaScript, HTML, and CSS. It serves as a practice project for Jest and test-driven development (TDD).
 
 ## Table of Contents
