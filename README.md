@@ -65,40 +65,39 @@ To start the game, open the index.html file in your web browser. You can do this
 Example:
 
    ```bash
-    npm install
+    open index.html
    ```
 
 ## Introduction
 
 This project uses Jest for testing. All tests are located in the **tests** directory. To run the tests, use the following command:
 
-    ```bash
+   ```bash
     npm test
-    ```
+   ```
 
 The tests are written following TDD principles, ensuring that the game logic is thoroughly tested before implementation.
 
 ## Project Structure
 
-    ```bash
-
+   ```bash
 battleship/
-├── dist/ # Compiled output
-│ ├── index.html # Entry HTML file
-├── node_modules/ # Node.js modules
-├── src/ # Source files
-│ ├── tests/ # Test files
-│ ├── css/ # CSS files
-│ │ └── styles.css
-│ ├── js/ # JavaScript files
-│ │ ├── game.js
-│ │ ├── player.js
-│ │ ├── ship.js
-│ │ ├── board.js
-│ │ └── index.js # Main entry file
-├── .gitignore # Git ignore file
-├── package.json # NPM package file
-├── README.md # Project README
-├── webpack.config.js # Webpack configuration file
+├── dist/                 # Compiled output
+│   ├── index.html        # Entry HTML file
+├── node_modules/         # Node.js modules
+├── src/                  # Source files
+│   ├── tests/            # Test files
+│   ├── css/              # CSS files
+│   │   └── styles.css
+│   ├── js/               # JavaScript files
+│   │   ├── game.js
+│   │   ├── player.js
+│   │   ├── ship.js
+│   │   ├── board.js
+│   │   └── index.js      # Main entry file
+├── .gitignore            # Git ignore file
+├── package.json          # NPM package file
+├── README.md             # Project README
+└── webpack.config.js     # Webpack configuration file
 
-    ```
+   ```
