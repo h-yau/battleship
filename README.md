@@ -64,9 +64,9 @@ To start the game, open the index.html file in your web browser. You can do this
 
 Example:
 
-    ```bash
-    open index.html
-    ```
+   ```bash
+    npm install
+   ```
 
 ## Introduction
 
