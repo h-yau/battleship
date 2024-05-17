@@ -1,57 +1,94 @@
-1. npm init -y
-2. npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
-3. npm install eslint-plugin-prettier --save-dev
-4. npm install eslint-config-prettier --save-dev
-5. npm install webpack webpack-cli --save-dev
-6. npm install --save-dev style-loader css-loader
-7. npm install --save-dev csv-loader xml-loader
-8. npm uninstall IF ANYTHING is not needed
+# Battleship Game
 
-9. npm install --save-dev webpack-dev-server
-10. npm run build
+This project is a web-based implementation of the classic Battleship game, developed using JavaScript, HTML, and CSS. It serves as a practice project for Jest and test-driven development (TDD).
 
-11. remember to add a .gitignore file
+## Table of Contents
 
-12. npm install -D babel-loader @babel/core @babel/preset-env webpack
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
 
-13. npm install --save-dev jest
-14. Include jest global helpers in the test files:
-import {expect, jest, test} from '@jest/globals';
+## Introduction
 
-.eslintrc.js ...
+Battleship is a strategy type guessing game for two players. This implementation allows a single player to play against a computer. The game is built as a practice exercise for learning Jest and TDD principles.
 
-module.exports = {
-env: {
-browser: true,
-es2021: true,
-},
-extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
-overrides: [
-{
-env: {
-node: true,
-},
-files: ['.eslintrc.{js,cjs}'],
-parserOptions: {
-sourceType: 'script',
-},
-},
-],
-parserOptions: {
-ecmaVersion: 'latest',
-sourceType: 'module',
-},
-rules: {
-quotes: ['error', 'single'],
-},
-};
+## Features
 
-.eslintignore ...
+- Single player mode against a computer.
+- Random ship placement for both player and computer.
+- Interactive UI for placing ships and attacking.
+- Turn-based gameplay.
+- Visual feedback for hits and misses.
+- Score tracking.
 
-./node_modules
-./dist
+## Technologies Used
 
-.gitignore ...
+- **JavaScript**: Game logic and functionality.
+- **HTML**: Structure of the web page.
+- **CSS**: Styling and layout of the game interface.
+- **Jest**: Testing framework for JavaScript.
+- **TDD**: Test-driven development methodology.
 
-node_modules/
-node/
+## Setup
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/battleship.git
+
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+    cd battleship
+
+   ```
+
+3. **Install the dependencies:**
+   ```bash
+    npm install
+   ```
+
+## Usage
+
+To start the game, open the index.html file in your web browser. You can do this by double-clicking the file or by using a local server.
+
+Example:
+
+    ```bash
+    open index.html
+    ```
+
+## Introduction
+
+This project uses Jest for testing. All tests are located in the **tests** directory. To run the tests, use the following command:
+
+    ```bash
+    npm test
+    ```
+
+The tests are written following TDD principles, ensuring that the game logic is thoroughly tested before implementation.
+
+## Project Structure
+
+    ```bash
+    battleship/
+    ├── **tests**/ # Test files
+    ├── css/ # CSS files
+    │ └── styles.css
+    ├── js/ # JavaScript files
+    │ ├── game.js
+    │ ├── player.js
+    │ ├── ship.js
+    │ └── board.js
+    ├── index.html # HTML file
+    ├── README.md # Project README
+    └── package.json # NPM package file
+    ```
