@@ -81,16 +81,24 @@ The tests are written following TDD principles, ensuring that the game logic is 
 ## Project Structure
 
     ```bash
-    battleship/
-    ├── **tests**/ # Test files
-    ├── css/ # CSS files
-    │ └── styles.css
-    ├── js/ # JavaScript files
-    │ ├── game.js
-    │ ├── player.js
-    │ ├── ship.js
-    │ └── board.js
-    ├── index.html # HTML file
-    ├── README.md # Project README
-    └── package.json # NPM package file
+
+battleship/
+├── dist/ # Compiled output
+│ ├── index.html # Entry HTML file
+├── node_modules/ # Node.js modules
+├── src/ # Source files
+│ ├── tests/ # Test files
+│ ├── css/ # CSS files
+│ │ └── styles.css
+│ ├── js/ # JavaScript files
+│ │ ├── game.js
+│ │ ├── player.js
+│ │ ├── ship.js
+│ │ ├── board.js
+│ │ └── index.js # Main entry file
+├── .gitignore # Git ignore file
+├── package.json # NPM package file
+├── README.md # Project README
+├── webpack.config.js # Webpack configuration file
+
     ```
