@@ -3,13 +3,15 @@ import ship from '../js/ship.js';
 
 describe('ship factory', () => {
   it('returns an object', () => {
-    expect(typeof ship()).toBe('object');
+    expect(typeof ship(4)).toBe('object');
   });
 
   it('throws error when the ship is less than or equal to 0', () => {
     expect(() => ship(0)).toThrow(Error);
     expect(() => ship(-1)).toThrow(Error);
   });
+
+  beforeEach(() => {});
 
   it('returns an object with correct properties', () => {
     const newShip = ship(4);
@@ -23,5 +25,9 @@ describe('ship factory', () => {
     expect(newShip.getTimesHit()).toBe(1);
   });
 
-  it.todo('can sink');
+  it('can sink', () => {
+    const newShip = ship(1);
+    newShip.hit();
+    expect(newShip.isSunk()).toBe(true);
+  });
 });

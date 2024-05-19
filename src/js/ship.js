@@ -1,13 +1,12 @@
 const ship = (len) => {
-  const _length = len;
-  if (_length <= 0) throw new Error('Invalid length!');
+  if (len <= 0) throw new Error('Invalid length!');
 
   let _timesHit = 0;
 
-  const isSunk = () => _length <= _timesHit;
+  const isSunk = () => len <= _timesHit;
 
   return {
-    getLength: () => _length,
+    getLength: () => len,
     getTimesHit: () => _timesHit,
     isSunk,
     hit: () => {
