@@ -1,4 +1,4 @@
-const ship = (len) => {
+const ship = (len, isVertical = true) => {
   if (len <= 0) throw new Error('Invalid length!');
 
   let _timesHit = 0;
@@ -13,6 +13,7 @@ const ship = (len) => {
       if (isSunk()) throw new Error("Already sunk! Can't get hit");
       _timesHit++;
     },
+    isVertical,
   };
 };
 

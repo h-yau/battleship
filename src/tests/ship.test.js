@@ -11,8 +11,6 @@ describe('ship factory', () => {
     expect(() => ship(-1)).toThrow(Error);
   });
 
-  beforeEach(() => {});
-
   it('returns an object with correct properties', () => {
     const newShip = ship(4);
     expect(newShip.getTimesHit()).toBe(0);
@@ -29,5 +27,15 @@ describe('ship factory', () => {
     const newShip = ship(1);
     newShip.hit();
     expect(newShip.isSunk()).toBe(true);
+  });
+
+  it('can return if it is vertical', () => {
+    const newShip = ship(1);
+    expect(newShip.isVertical).toBe(true);
+  });
+
+  it('can return if it is not a vertical', () => {
+    const newShip = ship(2, false);
+    expect(newShip.isVertical).toBe(false);
   });
 });
