@@ -99,6 +99,11 @@ const gameboard = () => {
     });
   };
 
+  const userHasLost = () => {
+    // TODO
+    console.log('I lost!');
+  };
+
   const receiveAttack = (coord) => {
     const [x, y] = coord;
     if (!isOccupied(coord)) {
@@ -119,6 +124,8 @@ const gameboard = () => {
         revealNeighbors(_ships.get(ship));
         // afterwards, delete the ship
         _ships.delete(ship);
+
+        if (_ships.size === 0) userHasLost();
       }
     }
   };

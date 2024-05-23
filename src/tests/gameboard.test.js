@@ -97,5 +97,34 @@ describe('gameboard factory', () => {
       expect(testShip.getTimesHit()).toBe(3);
       expect(testShip.isSunk()).toBe(true);
     });
+
+    it('can reveal neighboring cells after ship has sunk', () => {
+      const coord = [3, 2];
+      const testShip = ship(3);
+      testboard.addShip(coord, testShip);
+
+      testboard.receiveAttack([3, 2]);
+      testboard.receiveAttack([3, 3]);
+      testboard.receiveAttack([3, 4]);
+
+      const neighboringCells = [
+        [2, 1],
+        [2, 2],
+        [2, 3],
+        [2, 4],
+        [2, 5],
+        [3, 1],
+        [3, 5],
+        [4, 1],
+        [4, 2],
+        [4, 3],
+        [4, 4],
+        [4, 5],
+      ];
+
+      neighboringCells.forEach((cell) => {
+        expect(testboard.isOccupied(cell)).toBe(true);
+      });
+    });
   });
 });
