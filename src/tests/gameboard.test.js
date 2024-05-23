@@ -75,12 +75,6 @@ describe('gameboard factory', () => {
   });
 
   describe('gameboard with ships instantiated', () => {
-    // beforeEach(() => {
-    //   const coord = [3, 2];
-    //   const testShip = ship(3);
-    //   testboard.addShip(coord, testShip);
-    // });
-
     it('can receive attacks on empty cells', () => {
       const coord = [3, 2];
       testboard.receiveAttack(coord);
