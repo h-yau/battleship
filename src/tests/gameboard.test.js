@@ -49,14 +49,59 @@ describe('gameboard factory', () => {
     });
   });
 
-  it.todo('does not allow overlapping or neighbor ships'); // check if +1, -1 and [+1 +1] etc. logic is to loop through it
+  // check if +1, -1 and [+1 +1] etc. logic is to loop through it
+  it('does not allow overlapping or neighbor ships', () => {
+    const successCoord = [3, 2];
+    const overlapingCoord = [3, 3];
+    const horizontalNeighborCoord = [2, 2];
+    const verticalNeighborCoord = [3, 0];
+    const diagonalNeighborCoord = [2, 1];
+
+    expect(() => testboard.addShip(successCoord, ship(3))).not.toThrow(Error);
+
+    expect(() => testboard.addShip(overlapingCoord, ship(3))).toThrow(Error);
+    expect(() => testboard.addShip(horizontalNeighborCoord, ship(3))).toThrow(
+      Error
+    );
+    expect(() => testboard.addShip(verticalNeighborCoord, ship(2))).toThrow(
+      Error
+    );
+    expect(() => testboard.addShip(diagonalNeighborCoord, ship(1))).toThrow(
+      Error
+    );
+    expect(() =>
+      testboard.addShip(diagonalNeighborCoord, ship(2, false))
+    ).toThrow(Error);
+  });
 
   describe('gameboard with ships instantiated', () => {
-    beforeEach(() => {
+    // beforeEach(() => {
+    //   const coord = [3, 2];
+    //   const testShip = ship(3);
+    //   testboard.addShip(coord, testShip);
+    // });
+
+    it('can receive attacks on empty cells', () => {
       const coord = [3, 2];
-      testboard.addShip(coord, ship(3));
+      testboard.receiveAttack(coord);
+      expect(testboard.isOccupied(coord)).toBe(true);
     });
 
-    it.todo('can receive attacks');
+    it('can receive attacks on ship', () => {
+      const coord = [3, 2];
+      const testShip = ship(3);
+      testboard.addShip(coord, testShip);
+      expect(testboard.isOccupied(coord)).toBe(true);
+
+      testboard.receiveAttack([3, 2]);
+      expect(testShip.getTimesHit()).toBe(1);
+
+      testboard.receiveAttack([3, 3]);
+      expect(testShip.getTimesHit()).toBe(2);
+
+      testboard.receiveAttack([3, 4]);
+      expect(testShip.getTimesHit()).toBe(3);
+      expect(testShip.isSunk()).toBe(true);
+    });
   });
 });
